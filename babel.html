@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Babel Demo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style media="screen">
+      html,
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      .error-box {
+        color: darkred;
+        border: 1px solid red;
+        border-radius: 3px;
+        background-color: #eebbbb;
+        margin: 1em;
+        padding: 2em;
+        text-align: center;
+      }
+
+      .error-box--hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <label>
+        Name:
+        <input type="text" id="name" />
+      </label>
+      <button id="submit-info">Click Me!</button>
+      <div id="content"></div>
+
+      <div id="error" class="error-box--hidden">
+        <button id="ok-button">OK</button>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/babel-standalone"></script>
+
+    <script type="text/babel" data-presets="latest">
+      const getMessage = name => `Welcome to JavaScript, ${name}!`;
+      const button = document.getElementById('submit-info');
+      const messageArea = document.getElementById('error');
+      const contentArea = document.getElementById('content');
+
+      button.addEventListener('click', event => {
+        const name = document.getElementById('name').value;
+
+        messageArea.className = 'error-box--hidden';
+        contentArea.textContent = '';
+
+        if (!name) {
+          messageArea.textContent = 'You need to enter a name.';
+          messageArea.className = 'error-box';
+        } else {
+          contentArea.textContent = getMessage(name);
+        }
+      });
+    </script>
+  </body>
+</html>
