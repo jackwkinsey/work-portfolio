@@ -1,0 +1,40 @@
+{
+  "name": "work-portfolio",
+  "version": "1.0.0",
+  "description": "My work portfolio, hosted at www.jackwkinsey.com.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "webpack": "webpack",
+    "webpack-watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackwkinsey/work-portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "web",
+    "app"
+  ],
+  "author": "Jack Kinsey <jack.w.kinsey@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackwkinsey/work-portfolio/issues"
+  },
+  "homepage": "https://github.com/jackwkinsey/work-portfolio#readme",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
