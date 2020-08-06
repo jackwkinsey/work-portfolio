@@ -15,7 +15,8 @@ describe('ExampleWorkModal component', () => {
     },
   };
 
-  let component = shallow(<ExampleWorkModal example={testExample} />);
+  let component = shallow(<ExampleWorkModal example={testExample} open={false} />);
+  let openComponent = shallow(<ExampleWorkModal example={testExample} open={true} />);
   let anchors = component.find('a');
 
   it('contains a single anchor element', () => {
@@ -26,5 +27,15 @@ describe('ExampleWorkModal component', () => {
   it('sets `href` attribute of anchor element correctly', () => {
     // Assert
     expect(anchors.prop('href')).toEqual(testExample.href);
+  });
+
+  it('sets the modal class modifier correctly for open and closed states', () => {
+    // Arrange
+    const closed = component.find('.modal--closed');
+    const open = openComponent.find('.modal--open');
+
+    // Assert
+    expect(closed.length).toBe(1);
+    expect(open.length).toBe(1);
   });
 });
