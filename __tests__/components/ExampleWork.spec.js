@@ -64,10 +64,11 @@ describe('ExampleWork component', () => {
 describe('ExampleWorkBubble component', () => {
   const testExample = testWork[0];
   let component;
+  let mockOpenModal = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();
-    component = shallow(<ExampleWorkBubble example={testExample} />);
+    component = shallow(<ExampleWorkBubble example={testExample} openModal={mockOpenModal} />);
   });
 
   it("contains a single 'img' element", () => {
@@ -85,5 +86,16 @@ describe('ExampleWorkBubble component', () => {
 
     // Assert
     expect(src).toEqual(testExample.image.src);
+  });
+
+  it('calls method to open modal when clicked', () => {
+    // Arrange
+    const wrapper = component.find('.section__exampleWrapper');
+
+    // Act
+    wrapper.simulate('click');
+
+    // Assert
+    expect(mockOpenModal).toHaveBeenCalledTimes(1);
   });
 });
