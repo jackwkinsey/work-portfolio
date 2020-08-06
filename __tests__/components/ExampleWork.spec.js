@@ -43,6 +43,22 @@ describe('ExampleWork component', () => {
     // Assert
     expect(numberOfChildren).toEqual(numberOfWorkItems);
   });
+
+  it('allows modal to open', () => {
+    // Act
+    component.instance().openModal();
+
+    // Assert
+    expect(component.state('modalOpen')).toBe(true);
+  });
+
+  it('allows modal to close', () => {
+    // Act
+    component.instance().closeModal();
+
+    // Assert
+    expect(component.state('modalOpen')).toBe(false);
+  });
 });
 
 describe('ExampleWorkBubble component', () => {
