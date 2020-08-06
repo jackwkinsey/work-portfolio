@@ -15,8 +15,9 @@ describe('ExampleWorkModal component', () => {
     },
   };
 
+  const mockCloseModal = jest.fn();
   let component = shallow(<ExampleWorkModal example={testExample} open={false} />);
-  let openComponent = shallow(<ExampleWorkModal example={testExample} open={true} />);
+  let openComponent = shallow(<ExampleWorkModal example={testExample} open={true} close={mockCloseModal} />);
   let anchors = component.find('a');
 
   it('contains a single anchor element', () => {
@@ -37,5 +38,16 @@ describe('ExampleWorkModal component', () => {
     // Assert
     expect(closed.length).toBe(1);
     expect(open.length).toBe(1);
+  });
+
+  it('calls close method when close button is clicked', () => {
+    // Arrange
+    const closeButton = openComponent.find('.modal__closeButton');
+
+    // Act
+    closeButton.simulate('click');
+
+    // Assert
+    expect(mockCloseModal).toHaveBeenCalledTimes(1);
   });
 });
