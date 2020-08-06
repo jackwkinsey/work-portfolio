@@ -12,7 +12,7 @@ export default class ExampleWork extends Component {
   }
 }
 
-class ExampleWorkBubble extends Component {
+export class ExampleWorkBubble extends Component {
   render() {
     const { title, image } = this.props.example;
     return (
