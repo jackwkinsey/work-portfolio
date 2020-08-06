@@ -9,6 +9,18 @@ export default class ExampleWork extends Component {
       modalOpen: false,
       selectedExample: props.work[0],
     };
+
+    // bind methods to this context
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal(_event, example) {
+    this.setState({ modalOpen: true, selectedExample: example });
+  }
+
+  closeModal(_event) {
+    this.setState({ modalOpen: false });
   }
 
   render() {
@@ -18,11 +30,11 @@ export default class ExampleWork extends Component {
       <>
         <section className="section section--alignCentered section--description">
           {this.props.work.map((example, idx) => {
-            return <ExampleWorkBubble example={example} key={idx} />;
+            return <ExampleWorkBubble example={example} key={idx} openModal={this.openModal} />;
           })}
         </section>
 
-        <ExampleWorkModal example={selectedExample} open={modalOpen} />
+        <ExampleWorkModal example={selectedExample} open={modalOpen} close={this.closeModal} />
       </>
     );
   }
@@ -30,9 +42,10 @@ export default class ExampleWork extends Component {
 
 export class ExampleWorkBubble extends Component {
   render() {
-    const { title, image } = this.props.example;
+    const { example } = this.props;
+    const { title, image } = example;
     return (
-      <div className="section__exampleWrapper">
+      <div className="section__exampleWrapper" onClick={evt => this.props.openModal(evt, example)}>
         <div className="section__example">
           <img alt={image.description} className="section__exampleImage" src={image.src} />
           <dl className="color--cloud">
