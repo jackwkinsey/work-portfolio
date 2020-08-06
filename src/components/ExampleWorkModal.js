@@ -9,8 +9,10 @@ export default class ExampleWorkModal extends Component {
       image: { src },
     } = this.props.example;
 
+    const modalClassModifier = this.props.open ? '--open' : '--closed';
+
     return (
-      <div className="background--skyBlue modal--closed">
+      <div className={`background--skyBlue modal${modalClassModifier}`}>
         <span className="color--cloud modal__closeButton">
           <i className="fa fa-window-close-o"></i>
         </span>
