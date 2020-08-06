@@ -30,10 +30,10 @@ describe('ExampleWork component', () => {
   });
 
   // I don't like this as a test because it ties the use of a <section> element to our implementation
-  it('is a section element', () => {
-    // Assert
-    expect(component.type()).toEqual('section');
-  });
+  // it('is a section element', () => {
+  //   // Assert
+  //   expect(component.type()).toEqual('section');
+  // });
 
   it('contains a child for each work item provided in `work` prop', () => {
     // Arrange
