@@ -14,7 +14,4 @@ phases:
 
 artifacts:
   files:
-    - files/*
-    - images/*
-    - styles/*
     - build/*
