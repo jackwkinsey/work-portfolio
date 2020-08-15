@@ -1,13 +1,21 @@
 {
   "name": "work-portfolio",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "private": true,
   "description": "My work portfolio, hosted at www.jackwkinsey.com.",
-  "main": "index.js",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3"
+  },
   "scripts": {
-    "test": "jest",
-    "test-watch": "jest --watch",
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -24,20 +32,19 @@
   "bugs": {
     "url": "https://github.com/jackwkinsey/work-portfolio/issues"
   },
-  "homepage": "https://github.com/jackwkinsey/work-portfolio#readme",
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "jest": "^26.2.2",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
