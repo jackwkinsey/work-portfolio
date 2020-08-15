@@ -4,8 +4,8 @@ This is my professional portfolio. It contains my resume as well as links to var
 
 ## Technologies Used
 
-- Git & GitHub
-- SSH
 - Amazon Web Services (AWS)
 - React
+- Sass
 - Node
+- Webpack
