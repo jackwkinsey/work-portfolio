@@ -34,12 +34,20 @@ describe('PageSection component', () => {
       expect(wrapper.exists('[data-testid="PageSection.contentImage"]')).toBe(true);
     });
 
-    it('has content text', () => {
+    it('does not have a content image when image prop is not provided', () => {
       // Act
       const wrapper = shallow(<PageSection />);
 
       // Assert
-      expect(wrapper.exists('[data-testid="PageSection.contentText"]'));
+      expect(wrapper.exists('[data-testid="PageSection.contentImage"]')).toBe(false);
+    });
+
+    it('has content', () => {
+      // Act
+      const wrapper = shallow(<PageSection />);
+
+      // Assert
+      expect(wrapper.exists('[data-testid="PageSection.content"]'));
     });
   });
 });
