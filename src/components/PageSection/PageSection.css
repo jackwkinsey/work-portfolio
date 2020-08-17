@@ -1,0 +1,34 @@
+.section {
+  margin: 2.5rem auto;
+  width: 60%;
+}
+
+.section__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  color: #ff1493;
+}
+
+.section__container {
+  display: flex;
+  align-items: center;
+}
+
+.section__container__image {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin-right: 2rem;
+}
+
+.section__container__content {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.section__container__content a,
+.section__container__content a:visited {
+  text-decoration: none;
+  color: #ff1493;
+}
