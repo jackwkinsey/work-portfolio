@@ -12,7 +12,7 @@ function App() {
         <p>
           Hello, my name is Jack Kinsey. I am a professional, full stack web developer with over 5 years of experience.
           I am also the founder of{' '}
-          <a href="https://www.hexbitstuidos.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.hexbitstudios.com" target="_blank" rel="noopener noreferrer">
             Hexbit Studios
           </a>
           , a small independent and hobbyist game studio.
