@@ -1,9 +1,5 @@
-.section {
-  margin: 2.5rem auto;
-  width: 60%;
-}
-
 .section__title {
+  text-align: center;
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
   color: #ff1493;
@@ -12,6 +8,7 @@
 .section__container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .section__container__image {
@@ -25,6 +22,7 @@
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
   text-align: left;
+  width: 550px;
 }
 
 .section__container__content a,
