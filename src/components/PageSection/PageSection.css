@@ -1,8 +1,12 @@
+.section {
+  margin-bottom: 3.5rem;
+}
+
 .section__title {
   text-align: center;
   font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  color: #ff1493;
+  font-size: 3.2rem;
+  color: #6715eb;
 }
 
 .section__container {
@@ -15,12 +19,12 @@
   width: 200px;
   height: 200px;
   border-radius: 100px;
-  margin-right: 2rem;
+  margin-right: 3.5rem;
 }
 
 .section__container__content {
   font-family: 'Lato', sans-serif;
-  font-size: 1rem;
+  font-size: 1.6rem;
   text-align: left;
   width: 550px;
 }
@@ -28,5 +32,5 @@
 .section__container__content a,
 .section__container__content a:visited {
   text-decoration: none;
-  color: #ff1493;
+  color: #6715eb;
 }
