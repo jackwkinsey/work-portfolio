@@ -14,7 +14,7 @@ const PageSection = props => {
   ) : null;
 
   return (
-    <section className="section">
+    <section className={`section ${props.className}`}>
       <div className="section__title" data-testid="PageSection.sectionTitle">
         {props.title}
       </div>
