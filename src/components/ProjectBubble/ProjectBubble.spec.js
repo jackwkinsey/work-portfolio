@@ -63,7 +63,7 @@ describe('ProjectBubble component', () => {
       const wrapper = shallow(<ProjectBubble project={testProject} />);
       const imageUrl = testProject.imageUrl;
       const backgroundImage = `url(${imageUrl})`;
-      const projectBubble = wrapper.find('[data-testid="ProjectBubble"]');
+      const projectBubble = wrapper.find('[data-testid="ProjectBubble.image"]');
 
       // Act
       const style = projectBubble.prop('style');
