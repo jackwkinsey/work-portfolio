@@ -19,6 +19,13 @@ body {
   animation: blink-animation 1s steps(5, start) infinite;
 }
 
+.projects-section .section__container__content {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .links-section .section__container__content {
   text-align: center;
 }

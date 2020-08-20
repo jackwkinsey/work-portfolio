@@ -1,12 +1,50 @@
 import React from 'react';
 import FileSaver from 'file-saver';
 import { PageSection } from './components/PageSection';
+import { ProjectBubble } from './components/ProjectBubble';
 import './App.css';
 
 function App() {
+  // todo: this download stuff should really be its own component.
   const downloadResume = () => {
     FileSaver.saveAs(`${process.env.PUBLIC_URL}/files/JackKinsey-Resume.pdf`, 'JackKinsey-Resume.pdf');
   };
+
+  const projects = [
+    {
+      name: 'My Awesome Project',
+      type: 'website',
+      url: 'http://www.example.com',
+      repo: 'https://wwww.github.com/jackwkinsey/my-awesome-project',
+      description: 'This project is flippin awesome',
+      imageUrl: `${process.env.PUBLIC_URL}/files/images/portfolio.png`,
+    },
+    {
+      name: 'My Awesome Project 2',
+      type: 'game',
+      url: 'http://www.example.com',
+      repo: 'https://wwww.github.com/jackwkinsey/my-awesome-project',
+      description: 'This project is flippin awesome',
+      imageUrl: `${process.env.PUBLIC_URL}/files/images/portfolio.png`,
+    },
+    {
+      name: 'My Awesome Project 3',
+      type: 'library',
+      url: 'http://www.example.com',
+      repo: 'https://wwww.github.com/jackwkinsey/my-awesome-project',
+      description: 'This project is flippin awesome',
+      imageUrl: `${process.env.PUBLIC_URL}/files/images/portfolio.png`,
+    },
+  ];
+
+  const handleProjectClick = project => {
+    alert('project clicked!!!');
+  };
+
+  const projectBubbles = projects.map(project => {
+    return <ProjectBubble project={project} clickHandler={handleProjectClick} key={project.name} />;
+  });
+
   return (
     <div className="App">
       <div className="header">
@@ -14,7 +52,7 @@ function App() {
       </div>
       <PageSection
         title="About Me"
-        image={{ src: `${process.env.PUBLIC_URL}/files/headshot.jpg`, altText: 'A headshot of Jack Kinsey' }}
+        image={{ src: `${process.env.PUBLIC_URL}/files/images/headshot.jpg`, altText: 'A headshot of Jack Kinsey' }}
       >
         <p>
           Hello, my name is Jack Kinsey. I am a professional, full stack web developer with over 5 years of experience.
@@ -41,6 +79,9 @@ function App() {
           </a>{' '}
           or composing music with my guitar or synthesizer.
         </p>
+      </PageSection>
+      <PageSection title="Projects" className="projects-section">
+        {projectBubbles}
       </PageSection>
       <PageSection title="Links" className="links-section">
         <p className>
