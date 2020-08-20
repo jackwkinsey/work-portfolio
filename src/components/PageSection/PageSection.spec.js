@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-
-// How can I have path aliases so this line can be:
-// import { Component } from '@/components/PageSection'?
-import { PageSection } from '..';
+import { PageSection } from '.';
 
 describe('PageSection component', () => {
   describe('smoke test', () => {
@@ -20,7 +17,7 @@ describe('PageSection component', () => {
       const wrapper = shallow(<PageSection />);
 
       // Assert
-      expect(wrapper.exists('[data-testid="PageSection.sectionTitle"]')).toBe(true);
+      expect(wrapper.exists('[data-testid="PageSection.title"]')).toBe(true);
     });
 
     it('has a content image when image prop is provided', () => {
