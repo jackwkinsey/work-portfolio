@@ -1,0 +1,30 @@
+.project {
+  width: 30rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+  border-radius: 50%;
+  border: 1rem solid #424242;
+  box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.75);
+}
+
+.project__image {
+  height: 100%;
+  width: 100%;
+  border-radius: 15rem;
+  filter: blur(3px);
+}
+
+.project__text-container {
+  position: absolute;
+  color: white;
+  text-align: center;
+}
+
+.project__name {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 600;
+}
